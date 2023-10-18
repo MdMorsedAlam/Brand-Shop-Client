@@ -5,19 +5,20 @@ import Swal from "sweetalert2";
 
 const Navbar = () => {
   const { user, logOut } = useContext(MyContext);
-  const navigate=useNavigate()
+
+  const navigate = useNavigate();
 
   const handelLogout = () => {
     logOut()
       .then(() => {
         Swal.fire({
-          position: 'top-end',
-          icon: 'success',
-          title: 'Successfully Logout',
+          position: "top-end",
+          icon: "success",
+          title: "Successfully Logout",
           showConfirmButton: false,
-          timer: 1500
-        })
-        navigate('/login')
+          timer: 1500,
+        });
+        navigate("/login");
       })
       .catch();
   };
@@ -93,7 +94,9 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <p className="justify-between">{user.displayName ?user.displayName:user.email }</p>
+                <p className="justify-between">
+                  {user.displayName ? user.displayName : user.email}
+                </p>
               </li>
               <li>
                 <Link to="editprofile">Edit Profile</Link>

@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import PropTypes from 'prop-types'
-import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { FacebookAuthProvider, GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { auth } from "../../firebase.config";
 
 export const MyContext=createContext(null)
@@ -22,15 +22,23 @@ const AuthProvider = ({children}) => {
 
     const GoogleProvider = new GoogleAuthProvider();
 
-    const GoogleLogin=()=>{
+    const googleLogin=()=>{
         setLoading(true)
         return signInWithPopup(auth, GoogleProvider)
     }
+    const FacebookProvider = new FacebookAuthProvider();
 
+    const facebookLogin=()=>{
+        setLoading(true)
+        return signInWithPopup(auth,FacebookProvider)
+    }
 
+    const GithubProvider = new GithubAuthProvider();
 
-
-
+    const githubLogin=()=>{
+        setLoading(true)
+        return signInWithPopup(auth,GithubProvider)
+    }
     const logOut = () => {
         setLoading(true);
         return signOut(auth);
@@ -43,7 +51,7 @@ const AuthProvider = ({children}) => {
         })
         return unSubscribe;
       }, []);
-    const contextInfo={user,loading,createUser,loginUser,GoogleLogin,logOut}
+    const contextInfo={user,loading,createUser,loginUser,googleLogin,facebookLogin,githubLogin,logOut}
     return (
         <MyContext.Provider value={contextInfo}>
             {

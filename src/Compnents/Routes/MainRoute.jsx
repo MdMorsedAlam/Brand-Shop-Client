@@ -7,6 +7,7 @@ import AddProduct from "../Pages/AddProduct/AddProduct";
 import MyCart from "../Pages/MyCart/MyCart";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import PrivateRoute from "./PrivateRoute";
 const MainRoute = ({children}) => {
 
 
@@ -22,11 +23,11 @@ const MainRoute = ({children}) => {
                 },
                 {
                     path:'addproduct',
-                    element:<AddProduct/>
+                    element:<PrivateRoute><AddProduct/></PrivateRoute>
                 },
                 {
                     path:'/mycart',
-                    element:<MyCart/>
+                    element:<PrivateRoute><MyCart/></PrivateRoute>
                 },
                 {
                     path:'/register',
