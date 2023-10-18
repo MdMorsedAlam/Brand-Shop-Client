@@ -1,9 +1,6 @@
 
-
-const AddProduct = () => {
-
-
-    const handelAdd = (e) => {
+const UpdateProduct = () => {
+    const handelUpdate = (e) => {
         e.preventDefault();
         const form=e.target;
         const brand=form.brand.value;
@@ -20,7 +17,7 @@ const AddProduct = () => {
       <h1 className=" text-green-500 text-center text-4xl font-bold">
         Add A Product
       </h1>
-      <form className="mt-12" onSubmit={handelAdd}>
+      <form className="mt-12" onSubmit={handelUpdate}>
         <div className="flex justify-between gap-5">
           <div className="form-control w-1/2">
             <label className="label">
@@ -110,11 +107,11 @@ const AddProduct = () => {
         <input
           className="btn btn-block mt-5"
           type="submit"
-          value="Add Product"
+          value="Update Product"
         />
       </form>
     </div>
     );
 };
 
-export default AddProduct;
+export default UpdateProduct;
