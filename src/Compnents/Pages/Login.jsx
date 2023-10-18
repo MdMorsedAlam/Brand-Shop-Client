@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
     AiOutlineFacebook,
     AiFillGithub,
@@ -6,10 +6,12 @@ import {
   } from "react-icons/ai";
 import { useContext } from "react";
 import { MyContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Login = () => {
-const {GoogleLogin}=useContext(MyContext)
+    const navigate=useNavigate()
+const {loginUser,GoogleLogin}=useContext(MyContext)
 
     const handelFacebook=()=>{
         console.log("name")
@@ -18,6 +20,7 @@ const {GoogleLogin}=useContext(MyContext)
         GoogleLogin()
         .then(res=>{
             console.log(res.user)
+            navigate('/')
         })
         .catch(err=>{
             console.log(err.message)
@@ -30,9 +33,27 @@ const {GoogleLogin}=useContext(MyContext)
     const handelLogin=e=>{
         e.preventDefault()
         const form=e.target;
-        const email=form.name.value;
+        const email=form.email.value;
         const pwd=form.pwd.value;
         console.log(email,pwd)
+        loginUser(email,pwd)
+        .then(()=>{
+            Swal.fire({
+                title: "Good",
+                text: "Successfully Login With Email And Password",
+                icon: "success",
+                confirmButtonText: "Cool",
+              });
+              navigate('/')
+        })
+        .catch(()=>{
+            Swal.fire({
+                title: "Error!",
+                text: "Something Went Wrong",
+                icon: "error",
+                confirmButtonText: "Ok",
+              });
+        })
 
 
         form.reset()
