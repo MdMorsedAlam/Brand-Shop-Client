@@ -1,6 +1,20 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { MyContext } from "../Provider/AuthProvider";
 
 const Navbar = () => {
+  const {user,logOut}=useContext(MyContext)
+
+
+  const handelLogout=()=>{
+    logOut()
+    .then(()=>{
+      console.log("Logout seccess")
+    })
+    .catch(()=>{
+      console.log("Opps")
+    })
+  }
   const navBar = (
     <>
       <li>
@@ -60,7 +74,21 @@ const Navbar = () => {
         <ul className="flex justify-between items-center gap-3">{navBar}</ul>
       </div>
       <div className="">
-        <NavLink
+        {
+          user?<div className="dropdown dropdown-end"> <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+          <div className="w-10 rounded-full">
+            <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+          </div>
+        </label>
+        <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+          <li>
+            <p className="justify-between">
+              {user.displayName}
+            </p>
+          </li>
+          <li><Link to='editprofile'>Edit Profile</Link></li>
+          <li onClick={handelLogout}><p>Logout</p></li>
+        </ul></div>:<NavLink
           to="/login"
           className={({ isActive, isPending }) =>
             isPending
@@ -72,6 +100,7 @@ const Navbar = () => {
         >
           Login
         </NavLink>
+        }
       </div>
     </div>
   );

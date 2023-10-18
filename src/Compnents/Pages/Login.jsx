@@ -4,16 +4,24 @@ import {
     AiFillGithub,
     AiFillGoogleCircle,
   } from "react-icons/ai";
+import { useContext } from "react";
+import { MyContext } from "../Provider/AuthProvider";
 
 
 const Login = () => {
-
+const {GoogleLogin}=useContext(MyContext)
 
     const handelFacebook=()=>{
-        console.log("Facebook")
+        console.log("name")
     }
     const handelGoogle=()=>{
-        console.log("Google")
+        GoogleLogin()
+        .then(res=>{
+            console.log(res.user)
+        })
+        .catch(err=>{
+            console.log(err.message)
+        })
     }
     const handelGithub=()=>{
         console.log("Github")
