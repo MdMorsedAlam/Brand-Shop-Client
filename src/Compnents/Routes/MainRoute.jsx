@@ -38,6 +38,7 @@ const MainRoute = ({ children }) => {
               <MyCart />
             </PrivateRoute>
           ),
+          loader:()=>fetch("http://localhost:6868/mycart")
         },
         {
           path: "/register",
