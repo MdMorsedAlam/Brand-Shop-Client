@@ -3,7 +3,6 @@ import Swal from "sweetalert2";
 
 const DetailsProduct = () => {
     const loaderData=useLoaderData()
-    console.log(loaderData)
 
     const handelAddToCart=()=>{
         const brand=loaderData.brand;
@@ -11,7 +10,6 @@ const DetailsProduct = () => {
         const price=loaderData.price;
         const photo=loaderData.photo;
         const cartData={brand,name,price,photo}
-        console.log(cartData)
         fetch("https://server-brand-shop.vercel.app/mycart", {
         method: "POST",
         headers: {
