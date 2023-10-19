@@ -8,6 +8,7 @@ import MyCart from "../Pages/MyCart/MyCart";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import PrivateRoute from "./PrivateRoute";
+import BrandProduct from "../Pages/BrandProduct";
 const MainRoute = ({children}) => {
 
 
@@ -19,7 +20,8 @@ const MainRoute = ({children}) => {
             children:[
                 {
                     path:'/',
-                    element:<Home></Home>
+                    element:<Home></Home>,
+                    loader:()=>fetch('/brands.json')
                 },
                 {
                     path:'addproduct',
@@ -36,6 +38,10 @@ const MainRoute = ({children}) => {
                 {
                     path:'/login',
                     element:<Login></Login>
+                },
+                {
+                    path:'/showbranditem',
+                    element:<BrandProduct></BrandProduct>
                 }
             ]
         }
