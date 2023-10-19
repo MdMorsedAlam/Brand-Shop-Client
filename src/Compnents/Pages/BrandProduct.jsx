@@ -1,15 +1,31 @@
 import { Link, useLoaderData } from "react-router-dom";
 import ErrorProduct from "./AddProduct/ErrorProduct";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 
 const BrandProduct = () => {
   const loaderData = useLoaderData();
-  // const [brandItem, setBrandItem] = useState(loaderData);
-//   const location = useLocation();
-  // console.log(loaderData);
-  // console.log(location.state)
+
   if(loaderData.length>0){
     return (
-        <div className="grid grid-cols-2 gap-10 my-10">
+        <div>
+          <div>
+          <Swiper
+      spaceBetween={10}
+      slidesPerView={1}
+      onSlideChange={() => console.log('slide change')}
+      onSwiper={(swiper) => console.log(swiper)}
+    >
+      {
+        loaderData.map(data=><SwiperSlide key={data._id}><img src={data.photo} alt="" /></SwiperSlide>)
+      }
+      
+      ...
+    </Swiper>
+          </div>
+          {/* Slider */}
+          {/* Products */}
+          <div className="grid grid-cols-2 gap-10 my-10">
           {loaderData?.map((item) =><div key={item._id} className="card bg-base-100 shadow-xl">
   <figure><img src={item.photo} alt="Shoes" /></figure>
   <div className="card-body">
@@ -25,6 +41,7 @@ const BrandProduct = () => {
   </div>
 </div>)}
           
+        </div>
         </div>
       );
   }else{

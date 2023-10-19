@@ -6,7 +6,6 @@ import Swal from "sweetalert2";
 const MyCart = () => {
     const loaderData=useLoaderData()
     const [cartItem,setcartItem]=useState(loaderData)
-    console.log(loaderData)
 
     const deleteItem=(id)=>{
         const remaining=cartItem.filter(item=>item._id!==id)
@@ -21,7 +20,7 @@ const MyCart = () => {
         confirmButtonText: 'Yes, delete it!'
       }).then((result) => {
         if (result.isConfirmed) {
-          fetch(`http://localhost:6868/mycart/${id}`,{
+          fetch(`https://server-brand-shop.vercel.app/mycart/${id}`,{
             method:"DELETE"
           })
           .then(res=>res.json())

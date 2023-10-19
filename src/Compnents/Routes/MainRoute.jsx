@@ -38,7 +38,7 @@ const MainRoute = ({ children }) => {
               <MyCart />
             </PrivateRoute>
           ),
-          loader:()=>fetch("http://localhost:6868/mycart")
+          loader:()=>fetch("https://server-brand-shop.vercel.app/mycart")
         },
         {
           path: "/register",
@@ -56,15 +56,15 @@ const MainRoute = ({ children }) => {
         },
         {
           path: "/updateproduct/:brand/:id",
-          element: <UpdateProduct />,
+          element: <PrivateRoute><UpdateProduct /></PrivateRoute>,
           loader: ({ params }) =>
-            fetch(`http://localhost:6868/${params.brand}/${params.id}`),
+            fetch(`https://server-brand-shop.vercel.app/${params.brand}/${params.id}`),
         },
         {
             path:"/detailsproduct/:brand/:id",
-            element:<DetailsProduct/>,
+            element:<PrivateRoute><DetailsProduct/></PrivateRoute>,
             loader: ({ params }) =>
-            fetch(`http://localhost:6868/${params.brand}/${params.id}`),
+            fetch(`https://server-brand-shop.vercel.app/${params.brand}/${params.id}`),
         }
       ],
     },

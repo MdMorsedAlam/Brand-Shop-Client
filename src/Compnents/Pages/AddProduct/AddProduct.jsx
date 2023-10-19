@@ -1,3 +1,5 @@
+import Swal from "sweetalert2";
+
 const AddProduct = () => {
   const handelAdd = (e) => {
     e.preventDefault();
@@ -91,11 +93,22 @@ const AddProduct = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.insertedId) {
-            alert("Product Added");
+            Swal.fire({
+              title: "Good",
+              text: "Successfully Add A Product",
+              icon: "success",
+              confirmButtonText: "Cool",
+            });
           }
         });
     } else {
-      alert("Select A Brand Name");
+      
+      Swal.fire({
+        title: "Error!",
+        text: "Select A Brand Name",
+        icon: "error",
+        confirmButtonText: "Ok",
+      });
     }
     form.reset()
   };

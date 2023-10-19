@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const DetailsProduct = () => {
     const loaderData=useLoaderData()
@@ -11,7 +12,7 @@ const DetailsProduct = () => {
         const photo=loaderData.photo;
         const cartData={brand,name,price,photo}
         console.log(cartData)
-        fetch("http://localhost:6868/mycart", {
+        fetch("https://server-brand-shop.vercel.app/mycart", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -21,7 +22,13 @@ const DetailsProduct = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.insertedId) {
-            alert("Product Added");
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Successfully Add To Cart This Item",
+                showConfirmButton: false,
+                timer: 1500,
+              });
           }
         });
     }
