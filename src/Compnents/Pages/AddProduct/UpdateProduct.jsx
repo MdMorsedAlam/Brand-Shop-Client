@@ -1,5 +1,8 @@
+import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const UpdateProduct = () => {
+  const loaderData=useLoaderData();
     const handelUpdate = (e) => {
         e.preventDefault();
         const form=e.target;
@@ -9,8 +12,32 @@ const UpdateProduct = () => {
         const rating=form.rating.value;
         const des=form.description.value;
         const photo=form.photo.value;
-        const addData={brand,name,price,rating,des,photo}
-        console.log(addData)
+        const updateData={brand,name,price,rating,des,photo}
+        fetch(`http://localhost:6868/${loaderData.brand.toLowerCase()}/${loaderData._id}`, {
+          method: "PUT",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(updateData),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.modifiedCount) {
+              Swal.fire({
+                title: "Success!",
+                text: "Updated Data Successfully",
+                icon: "success",
+                confirmButtonText: "Cool",
+              });
+            }else{
+              Swal.fire({
+                title: "Oppss!",
+                text: "Something Went Wrong",
+                icon: "error",
+                confirmButtonText: "Ok",
+              });
+            }
+          });
     }
     return (
         <div className="w-2/3 mx-auto bg-[#d4bf87] p-10">
@@ -25,8 +52,7 @@ const UpdateProduct = () => {
             </label>
             <label className="input-group">
             <select name="brand" className="input input-bordered w-full">
-  <option value=''>Select Brand</option>
-  <option value="otherOption">Other option</option>
+  <option value={loaderData.brand}>{loaderData.brand}</option>
 </select>
             </label>
           </div>
@@ -38,6 +64,7 @@ const UpdateProduct = () => {
             </label>
             <label className="input-group">
               <input
+              defaultValue={loaderData.name}
                 type="text"
                 placeholder="Name"
                 name="name"
@@ -55,6 +82,7 @@ const UpdateProduct = () => {
             </label>
             <label className="input-group">
               <input
+              defaultValue={loaderData.price}
                 type="text"
                 placeholder="Price"
                 name="price"
@@ -68,6 +96,7 @@ const UpdateProduct = () => {
             </label>
             <label className="input-group">
               <input
+              defaultValue={loaderData.rating}
                 type="number"
                 placeholder="Rating"
                 name="rating"
@@ -83,6 +112,7 @@ const UpdateProduct = () => {
             </label>
             <label className="input-group">
               <textarea type="text"
+              defaultValue={loaderData.des}
                 placeholder="Short Description"
                 name="description"
                 className="input input-bordered w-full"/>
@@ -95,6 +125,7 @@ const UpdateProduct = () => {
           <label className="input-group">
             <input
               type="text"
+              defaultValue={loaderData.photo}
               placeholder="Photo URL"
               name="photo"
               className="input input-bordered w-full"

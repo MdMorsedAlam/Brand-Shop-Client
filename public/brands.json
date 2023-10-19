@@ -2,31 +2,37 @@
   {
     "id": 1,
     "name": "Toyota",
-    "img": "https://i.ibb.co/GRwP009/Toyota-logo.jpg"
+    "img": "https://i.ibb.co/GRwP009/Toyota-logo.jpg",
+    "url": "toyota"
   },
   {
     "id": 2,
     "name": "Ford",
-    "img": "https://i.ibb.co/HgtLYfQ/Ford-Logo.jpg"
+    "img": "https://i.ibb.co/HgtLYfQ/Ford-Logo.jpg",
+    "url": "ford"
   },
   {
     "id": 3,
     "name": "BMW",
-    "img": "https://i.ibb.co/mXDsZyX/bmw-logo.jpg"
+    "img": "https://i.ibb.co/mXDsZyX/bmw-logo.jpg",
+    "url": "bmw"
   },
   {
     "id": 4,
     "name": "Mercedes-Benz",
-    "img": "https://i.ibb.co/2MV80Ln/Mercedes-Benz-logo.jpg"
+    "img": "https://i.ibb.co/2MV80Ln/Mercedes-Benz-logo.jpg",
+    "url": "mercedes"
   },
   {
     "id": 5,
     "name": "Tesla",
-    "img": "https://i.ibb.co/5s86bJG/Tesla-Logo.jpg"
+    "img": "https://i.ibb.co/5s86bJG/Tesla-Logo.jpg",
+    "url": "tesla"
   },
   {
     "id": 6,
     "name": "Honda",
-    "img": "https://i.ibb.co/F75r9RP/Honda.jpg"
+    "img": "https://i.ibb.co/F75r9RP/Honda.jpg",
+    "url": "honda"
   }
 ]
