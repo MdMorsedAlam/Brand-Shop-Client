@@ -32,12 +32,12 @@ const DetailsProduct = () => {
     }
     return (
         <div className="card w-2/3 mx-auto my-10 bg-base-100 shadow-xl">
-  <figure><img src={loaderData.photo} alt="Shoes" /></figure>
+  <figure><img src={loaderData.photo} alt={loaderData.photo} /></figure>
   <div className="card-body">
-    <h2 className="card-title">{loaderData.brand}</h2>
-    <h2 className="card-title">{loaderData.name}</h2>
-    <p>{loaderData.price}</p>
-    <p>{loaderData.des}</p>
+    <h2 className="card-title">Brand : {loaderData.brand}</h2>
+    <h2 className="card-title">Name : {loaderData.name}</h2>
+    <p> <span className="text-lg font-semibold">Price :</span> {loaderData.price} <span className="text-lg font-semibold">Taka</span></p>
+    <p className="text-[#312f2f] italic">{loaderData.des}</p>
     <div className="card-actions justify-end">
       <button onClick={handelAddToCart} className="btn btn-primary">Add To Cart</button>
     </div>

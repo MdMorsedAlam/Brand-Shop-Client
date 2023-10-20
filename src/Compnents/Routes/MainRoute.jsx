@@ -11,6 +11,7 @@ import PrivateRoute from "./PrivateRoute";
 import BrandProduct from "../Pages/BrandProduct";
 import UpdateProduct from "../Pages/AddProduct/UpdateProduct";
 import DetailsProduct from "../Pages/AddProduct/DetailsProduct";
+import ErrorProduct from "../Pages/AddProduct/ErrorProduct";
 const MainRoute = ({ children }) => {
   const router = createBrowserRouter([
     {
@@ -51,6 +52,7 @@ const MainRoute = ({ children }) => {
         {
           path: "/showbranditem/:brand",
           element: <BrandProduct></BrandProduct>,
+          errorElement:<ErrorProduct/>,
           loader: ({ params }) =>
             fetch(`https://server-brand-shop.vercel.app/${params.brand}`),
         },

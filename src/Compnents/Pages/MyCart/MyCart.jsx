@@ -40,7 +40,7 @@ const MyCart = () => {
     }
     return (
         <div className="overflow-x-auto my-10">
-            <h1 className="text-center text-4xl font-bold text-green-500">Cart Items : {cartItem.length}</h1>
+            <h1 className="text-center text-4xl font-bold text-green-500 mb-3">Cart Items : {cartItem.length}</h1>
   <table className="table">
     {/* head */}
     <thead>
@@ -57,10 +57,10 @@ const MyCart = () => {
       
       {
         cartItem.map(data=><tr key={data._id}>
-            <td><img src={data.photo} alt="" /></td>
-            <td>{data.brand}</td>
-            <td>{data.name}</td>
-            <td>{data.price}</td>
+            <td><div className="w-32"><img src={data.photo} alt="" /></div></td>
+            <td className="font-bold">{data.brand}</td>
+            <td className="font-bold">{data.name}</td>
+            <td className="font-bold">{data.price}</td>
             <td><button onClick={()=>deleteItem(data._id)} className="btn btn-accent">X</button></td>
           </tr>)
       }

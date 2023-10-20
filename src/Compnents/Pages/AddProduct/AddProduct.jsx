@@ -23,7 +23,19 @@ const AddProduct = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.insertedId) {
-            alert("Product Added");
+            Swal.fire({
+              title: "Good",
+              text: "Successfully Add A Product",
+              icon: "success",
+              confirmButtonText: "Cool",
+            });
+          }else {
+            Swal.fire({
+              title: "Oppss!",
+              text: "Something Went Wrong",
+              icon: "error",
+              confirmButtonText: "Ok",
+            });
           }
         });
     } else if (brand === "Toyota") {
@@ -37,7 +49,19 @@ const AddProduct = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.insertedId) {
-            alert("Product Added");
+            Swal.fire({
+              title: "Good",
+              text: "Successfully Add A Product",
+              icon: "success",
+              confirmButtonText: "Cool",
+            });
+          }else {
+            Swal.fire({
+              title: "Oppss!",
+              text: "Something Went Wrong",
+              icon: "error",
+              confirmButtonText: "Ok",
+            });
           }
         });
     } else if (brand === "Ford") {
@@ -51,10 +75,22 @@ const AddProduct = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.insertedId) {
-            alert("Product Added");
+            Swal.fire({
+              title: "Good",
+              text: "Successfully Add A Product",
+              icon: "success",
+              confirmButtonText: "Cool",
+            });
+          }else {
+            Swal.fire({
+              title: "Oppss!",
+              text: "Something Went Wrong",
+              icon: "error",
+              confirmButtonText: "Ok",
+            });
           }
         });
-    } else if (brand === "Mercedes-Benz") {
+    } else if (brand === "Mercedes") {
       fetch("https://server-brand-shop.vercel.app/mercedes", {
         method: "POST",
         headers: {
@@ -65,7 +101,19 @@ const AddProduct = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.insertedId) {
-            alert("Product Added");
+            Swal.fire({
+              title: "Good",
+              text: "Successfully Add A Product",
+              icon: "success",
+              confirmButtonText: "Cool",
+            });
+          }else {
+            Swal.fire({
+              title: "Oppss!",
+              text: "Something Went Wrong",
+              icon: "error",
+              confirmButtonText: "Ok",
+            });
           }
         });
     } else if (brand === "BMW") {
@@ -79,7 +127,19 @@ const AddProduct = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.insertedId) {
-            alert("Product Added");
+            Swal.fire({
+              title: "Good",
+              text: "Successfully Add A Product",
+              icon: "success",
+              confirmButtonText: "Cool",
+            });
+          }else {
+            Swal.fire({
+              title: "Oppss!",
+              text: "Something Went Wrong",
+              icon: "error",
+              confirmButtonText: "Ok",
+            });
           }
         });
     } else if (brand === "Tesla") {
@@ -99,10 +159,16 @@ const AddProduct = () => {
               icon: "success",
               confirmButtonText: "Cool",
             });
+          }else {
+            Swal.fire({
+              title: "Oppss!",
+              text: "Something Went Wrong",
+              icon: "error",
+              confirmButtonText: "Ok",
+            });
           }
         });
     } else {
-      
       Swal.fire({
         title: "Error!",
         text: "Select A Brand Name",
@@ -110,7 +176,7 @@ const AddProduct = () => {
         confirmButtonText: "Ok",
       });
     }
-    form.reset()
+    form.reset();
   };
   return (
     <div className="w-2/3 mx-auto bg-[#d4bf87] p-10 my-10">
@@ -129,7 +195,7 @@ const AddProduct = () => {
                 <option>Toyota</option>
                 <option>Ford</option>
                 <option>BMW</option>
-                <option>Mercedes-Benz</option>
+                <option>Mercedes</option>
                 <option>Tesla</option>
                 <option>Honda</option>
               </select>

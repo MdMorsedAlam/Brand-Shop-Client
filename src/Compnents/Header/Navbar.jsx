@@ -73,7 +73,7 @@ const Navbar = () => {
       <div>
         <Link to="/">
           <p className=" uppercase text-3xl text-blue-500 font-bold">
-            Brand SHOP
+          Automotive SHOP
           </p>
         </Link>
       </div>
