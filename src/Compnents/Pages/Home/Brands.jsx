@@ -5,7 +5,7 @@ const Brands = ({ brands }) => {
   return (
     <div>
       <div
-        className="hero min-h-screen"
+        className="hero h-[70vh]"
         style={{
           backgroundImage: "url(https://i.ibb.co/VS88hZR/S-Class-S-450.jpg)",
         }}

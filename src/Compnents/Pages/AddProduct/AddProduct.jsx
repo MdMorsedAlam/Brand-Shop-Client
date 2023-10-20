@@ -10,172 +10,184 @@ const AddProduct = () => {
     const rating = form.rating.value;
     const des = form.description.value;
     const photo = form.photo.value;
+    const intRating = parseInt(rating);
+
     const addData = { brand, name, price, rating, des, photo };
 
-    if (brand === "Honda") {
-      fetch("https://server-brand-shop.vercel.app/honda", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(addData),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.insertedId) {
-            Swal.fire({
-              title: "Good",
-              text: "Successfully Add A Product",
-              icon: "success",
-              confirmButtonText: "Cool",
-            });
-          }else {
-            Swal.fire({
-              title: "Oppss!",
-              text: "Something Went Wrong",
-              icon: "error",
-              confirmButtonText: "Ok",
-            });
-          }
-        });
-    } else if (brand === "Toyota") {
-      fetch("https://server-brand-shop.vercel.app/toyota", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(addData),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.insertedId) {
-            Swal.fire({
-              title: "Good",
-              text: "Successfully Add A Product",
-              icon: "success",
-              confirmButtonText: "Cool",
-            });
-          }else {
-            Swal.fire({
-              title: "Oppss!",
-              text: "Something Went Wrong",
-              icon: "error",
-              confirmButtonText: "Ok",
-            });
-          }
-        });
-    } else if (brand === "Ford") {
-      fetch("https://server-brand-shop.vercel.app/ford", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(addData),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.insertedId) {
-            Swal.fire({
-              title: "Good",
-              text: "Successfully Add A Product",
-              icon: "success",
-              confirmButtonText: "Cool",
-            });
-          }else {
-            Swal.fire({
-              title: "Oppss!",
-              text: "Something Went Wrong",
-              icon: "error",
-              confirmButtonText: "Ok",
-            });
-          }
-        });
-    } else if (brand === "Mercedes") {
-      fetch("https://server-brand-shop.vercel.app/mercedes", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(addData),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.insertedId) {
-            Swal.fire({
-              title: "Good",
-              text: "Successfully Add A Product",
-              icon: "success",
-              confirmButtonText: "Cool",
-            });
-          }else {
-            Swal.fire({
-              title: "Oppss!",
-              text: "Something Went Wrong",
-              icon: "error",
-              confirmButtonText: "Ok",
-            });
-          }
-        });
-    } else if (brand === "BMW") {
-      fetch("https://server-brand-shop.vercel.app/bmw", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(addData),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.insertedId) {
-            Swal.fire({
-              title: "Good",
-              text: "Successfully Add A Product",
-              icon: "success",
-              confirmButtonText: "Cool",
-            });
-          }else {
-            Swal.fire({
-              title: "Oppss!",
-              text: "Something Went Wrong",
-              icon: "error",
-              confirmButtonText: "Ok",
-            });
-          }
-        });
-    } else if (brand === "Tesla") {
-      fetch("https://server-brand-shop.vercel.app/tesla", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(addData),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.insertedId) {
-            Swal.fire({
-              title: "Good",
-              text: "Successfully Add A Product",
-              icon: "success",
-              confirmButtonText: "Cool",
-            });
-          }else {
-            Swal.fire({
-              title: "Oppss!",
-              text: "Something Went Wrong",
-              icon: "error",
-              confirmButtonText: "Ok",
-            });
-          }
-        });
-    } else {
+    if (intRating > 5) {
       Swal.fire({
-        title: "Error!",
-        text: "Select A Brand Name",
+        title: "Oppss!",
+        text: "You Can't Give Rating Upto 5",
         icon: "error",
         confirmButtonText: "Ok",
       });
+    } else {
+      if (brand === "Honda") {
+        fetch("https://server-brand-shop.vercel.app/honda", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(addData),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.insertedId) {
+              Swal.fire({
+                title: "Good",
+                text: "Successfully Add A Product",
+                icon: "success",
+                confirmButtonText: "Cool",
+              });
+            } else {
+              Swal.fire({
+                title: "Oppss!",
+                text: "Something Went Wrong",
+                icon: "error",
+                confirmButtonText: "Ok",
+              });
+            }
+          });
+      } else if (brand === "Toyota") {
+        fetch("https://server-brand-shop.vercel.app/toyota", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(addData),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.insertedId) {
+              Swal.fire({
+                title: "Good",
+                text: "Successfully Add A Product",
+                icon: "success",
+                confirmButtonText: "Cool",
+              });
+            } else {
+              Swal.fire({
+                title: "Oppss!",
+                text: "Something Went Wrong",
+                icon: "error",
+                confirmButtonText: "Ok",
+              });
+            }
+          });
+      } else if (brand === "Ford") {
+        fetch("https://server-brand-shop.vercel.app/ford", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(addData),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.insertedId) {
+              Swal.fire({
+                title: "Good",
+                text: "Successfully Add A Product",
+                icon: "success",
+                confirmButtonText: "Cool",
+              });
+            } else {
+              Swal.fire({
+                title: "Oppss!",
+                text: "Something Went Wrong",
+                icon: "error",
+                confirmButtonText: "Ok",
+              });
+            }
+          });
+      } else if (brand === "Mercedes") {
+        fetch("https://server-brand-shop.vercel.app/mercedes", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(addData),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.insertedId) {
+              Swal.fire({
+                title: "Good",
+                text: "Successfully Add A Product",
+                icon: "success",
+                confirmButtonText: "Cool",
+              });
+            } else {
+              Swal.fire({
+                title: "Oppss!",
+                text: "Something Went Wrong",
+                icon: "error",
+                confirmButtonText: "Ok",
+              });
+            }
+          });
+      } else if (brand === "BMW") {
+        fetch("https://server-brand-shop.vercel.app/bmw", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(addData),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.insertedId) {
+              Swal.fire({
+                title: "Good",
+                text: "Successfully Add A Product",
+                icon: "success",
+                confirmButtonText: "Cool",
+              });
+            } else {
+              Swal.fire({
+                title: "Oppss!",
+                text: "Something Went Wrong",
+                icon: "error",
+                confirmButtonText: "Ok",
+              });
+            }
+          });
+      } else if (brand === "Tesla") {
+        fetch("https://server-brand-shop.vercel.app/tesla", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(addData),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.insertedId) {
+              Swal.fire({
+                title: "Good",
+                text: "Successfully Add A Product",
+                icon: "success",
+                confirmButtonText: "Cool",
+              });
+            } else {
+              Swal.fire({
+                title: "Oppss!",
+                text: "Something Went Wrong",
+                icon: "error",
+                confirmButtonText: "Ok",
+              });
+            }
+          });
+      } else {
+        Swal.fire({
+          title: "Error!",
+          text: "Select A Brand Name",
+          icon: "error",
+          confirmButtonText: "Ok",
+        });
+      }
     }
+
     form.reset();
   };
   return (
@@ -211,6 +223,7 @@ const AddProduct = () => {
                 placeholder="Name"
                 name="name"
                 className="input input-bordered w-full"
+                required
               />
             </label>
           </div>
@@ -226,6 +239,7 @@ const AddProduct = () => {
                 placeholder="Price"
                 name="price"
                 className="input input-bordered w-full"
+                required
               />
             </label>
           </div>
@@ -239,6 +253,7 @@ const AddProduct = () => {
                 placeholder="Rating"
                 name="rating"
                 className="input input-bordered w-full"
+                required
               />
             </label>
           </div>
@@ -256,6 +271,7 @@ const AddProduct = () => {
                 placeholder="Short Description"
                 name="description"
                 className="input input-bordered w-full"
+                required
               />
             </label>
           </div>
@@ -269,6 +285,7 @@ const AddProduct = () => {
                 placeholder="Photo URL"
                 name="photo"
                 className="input input-bordered w-full"
+                required
               />
             </label>
           </div>

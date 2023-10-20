@@ -12,37 +12,47 @@ const UpdateProduct = () => {
     const rating = form.rating.value;
     const des = form.description.value;
     const photo = form.photo.value;
+    const intRating = parseInt(rating);
     const updateData = { brand, name, price, rating, des, photo };
-    fetch(
-      `https://server-brand-shop.vercel.app/${loaderData.brand.toLowerCase()}/${
-        loaderData._id
-      }`,
-      {
-        method: "PUT",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(updateData),
-      }
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.modifiedCount) {
-          Swal.fire({
-            title: "Success!",
-            text: "Updated Data Successfully",
-            icon: "success",
-            confirmButtonText: "Cool",
-          });
-        } else {
-          Swal.fire({
-            title: "Oppss!",
-            text: "Something Went Wrong",
-            icon: "error",
-            confirmButtonText: "Ok",
-          });
-        }
+    if (intRating > 5) {
+      Swal.fire({
+        title: "Oppss!",
+        text: "You Can't Give Rating Upto 5",
+        icon: "error",
+        confirmButtonText: "Ok",
       });
+    } else {
+      fetch(
+        `https://server-brand-shop.vercel.app/${loaderData.brand.toLowerCase()}/${
+          loaderData._id
+        }`,
+        {
+          method: "PUT",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(updateData),
+        }
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.modifiedCount) {
+            Swal.fire({
+              title: "Success!",
+              text: "Updated Data Successfully",
+              icon: "success",
+              confirmButtonText: "Cool",
+            });
+          } else {
+            Swal.fire({
+              title: "Oppss!",
+              text: "Something Went Wrong",
+              icon: "error",
+              confirmButtonText: "Ok",
+            });
+          }
+        });
+    }
   };
   return (
     <div className="w-2/3 mx-auto bg-[#d4bf87] p-10">
@@ -72,6 +82,7 @@ const UpdateProduct = () => {
                 placeholder="Name"
                 name="name"
                 className="input input-bordered w-full"
+                required
               />
             </label>
           </div>
@@ -88,6 +99,7 @@ const UpdateProduct = () => {
                 placeholder="Price"
                 name="price"
                 className="input input-bordered w-full"
+                required
               />
             </label>
           </div>
@@ -102,6 +114,7 @@ const UpdateProduct = () => {
                 placeholder="Rating"
                 name="rating"
                 className="input input-bordered w-full"
+                required
               />
             </label>
           </div>
@@ -120,6 +133,7 @@ const UpdateProduct = () => {
                 placeholder="Short Description"
                 name="description"
                 className="input input-bordered w-full"
+                required
               />
             </label>
           </div>
@@ -134,6 +148,7 @@ const UpdateProduct = () => {
                 placeholder="Photo URL"
                 name="photo"
                 className="input input-bordered w-full"
+                required
               />
             </label>
           </div>
