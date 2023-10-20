@@ -14,18 +14,10 @@ import {
   Mousewheel,
   Keyboard,
 } from "swiper/modules";
-// import { useState } from "react";
+
 
 const BrandProduct = () => {
   const loaderData = useLoaderData();
-
-
-
-
-  // Catch Rating value
-
-  
-
 
 
   if (loaderData.length > 0) {
