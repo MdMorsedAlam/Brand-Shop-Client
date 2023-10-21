@@ -38,7 +38,7 @@ const BrandProduct = () => {
           >
             {loaderData.slice(0, 4).map((data) => (
               <SwiperSlide key={data._id}>
-                <div className="h-[350px] md:h-[450px]">
+                <div className="h-[350px] md:h-[450px] mt-10 z-0">
                   <img className="h-full w-full" src={data.photo} alt="" />
                 </div>
               </SwiperSlide>
