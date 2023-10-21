@@ -5,6 +5,7 @@ const AddProduct = () => {
     e.preventDefault();
     const form = e.target;
     const brand = form.brand.value;
+    const type = form.type.value;
     const name = form.name.value;
     const price = form.price.value;
     const rating = form.rating.value;
@@ -12,7 +13,7 @@ const AddProduct = () => {
     const photo = form.photo.value;
     const intRating = parseInt(rating);
 
-    const addData = { brand, name, price, rating, des, photo };
+    const addData = { brand,type, name, price, rating, des, photo };
 
     if (intRating > 5) {
       Swal.fire({
@@ -215,6 +216,21 @@ const AddProduct = () => {
           </div>
           <div className="form-control w-1/2">
             <label className="label">
+              <span className="label-text font-bold text-lg">Product Type</span>
+            </label>
+            <label className="input-group">
+              <select name="type" className="input input-bordered w-full">
+                <option>Cars</option>
+                <option>Trucks</option>
+                <option>Vans</option>
+                <option>Sedan</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <div className="flex justify-between gap-5 mt-5">
+          <div className="form-control w-1/2">
+            <label className="label">
               <span className="label-text font-bold text-lg">Name</span>
             </label>
             <label className="input-group">
@@ -227,8 +243,6 @@ const AddProduct = () => {
               />
             </label>
           </div>
-        </div>
-        <div className="flex justify-between gap-5 mt-5">
           <div className="form-control w-1/2">
             <label className="label">
               <span className="label-text font-bold text-lg">Price</span>
@@ -243,6 +257,8 @@ const AddProduct = () => {
               />
             </label>
           </div>
+        </div>
+        <div className="flex justify-between gap-5 mt-5">
           <div className="form-control w-1/2">
             <label className="label">
               <span className="label-text font-bold text-lg">Rating</span>
@@ -257,8 +273,6 @@ const AddProduct = () => {
               />
             </label>
           </div>
-        </div>
-        <div className="flex justify-between gap-5 mt-5">
           <div className="form-control w-1/2">
             <label className="label">
               <span className="label-text font-bold text-lg">
@@ -275,7 +289,10 @@ const AddProduct = () => {
               />
             </label>
           </div>
-          <div className="form-control w-1/2">
+          
+        </div>
+        <div className="flex justify-between gap-5 mt-5">
+          <div className="form-control w-full">
             <label className="label">
               <span className="label-text font-bold text-lg">Photo URL</span>
             </label>

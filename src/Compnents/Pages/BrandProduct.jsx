@@ -58,7 +58,8 @@ const BrandProduct = () => {
                 />
               </figure>
               <div className="card-body">
-                <h2 className="card-title">Name : {item.name}</h2>
+                <h2 className="card-title text-2xl">Name : {item.name}</h2>
+                <p className="text-lg font-semibold">Type : {item.type}</p>
                 <p className="text-lg font-semibold">Price : {item.price}</p>
                 <p className="text-lg font-semibold flex items-center">Rating : <Rating
       style={{ maxWidth: 100,}}

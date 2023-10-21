@@ -1,10 +1,19 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { MyContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
 const Navbar = () => {
   const { user, logOut } = useContext(MyContext);
+  const [light,setLight]=useState(true)
+  const handelDark=()=>{
+    setLight(!light)
+    document.querySelector("body").setAttribute("data-theme","dark")
+  }
+  const handelLight=()=>{
+    setLight(true)
+    document.querySelector("body").setAttribute("data-theme","light")
+  }
 
   const navigate = useNavigate();
 
@@ -80,8 +89,9 @@ const Navbar = () => {
       <div className="">
         <ul className="flex justify-between items-center gap-3">{navBar}</ul>
       </div>
-      <div className="">
-        {user ? (
+      <div className="flex justify-center items-center gap-4">
+       <div>
+       {user ? (
           <div className="dropdown dropdown-end">
             {" "}
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
@@ -120,6 +130,16 @@ const Navbar = () => {
             Login
           </NavLink>
         )}
+
+       </div>
+
+        <div>
+          {
+            light?<p className=" cursor-pointer font-bold" onClick={handelDark}>Dark</p>:<p className=" cursor-pointer font-bold" onClick={handelLight}>Light</p>
+          }
+          
+          
+        </div>
       </div>
     </div>
   );
