@@ -31,7 +31,7 @@ const DetailsProduct = () => {
         });
     }
     return (
-        <div className="card w-2/3 mx-auto my-10 bg-base-100 shadow-xl">
+        <div className="card md:w-2/3 mx-auto my-10 bg-base-100 shadow-xl">
   <figure><img src={loaderData.photo} alt={loaderData.photo} /></figure>
   <div className="card-body">
     <h2 className="card-title">Brand : {loaderData.brand}</h2>
