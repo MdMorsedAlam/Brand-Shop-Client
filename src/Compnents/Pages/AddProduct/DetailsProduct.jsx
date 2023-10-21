@@ -37,7 +37,7 @@ const DetailsProduct = () => {
     <h2 className="card-title">Brand : {loaderData.brand}</h2>
     <h2 className="card-title">Name : {loaderData.name}</h2>
     <p> <span className="text-lg font-semibold">Price :</span> {loaderData.price} <span className="text-lg font-semibold">Taka</span></p>
-    <p className="text-[#312f2f] italic">{loaderData.des}</p>
+    <p className="text-[#797474] italic">{loaderData.des}</p>
     <div className="card-actions justify-end">
       <button onClick={handelAddToCart} className="btn btn-primary">Add To Cart</button>
     </div>
