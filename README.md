@@ -1,8 +1,14 @@
-# React + Vite
+# [Brand Shop Live Link](https://my-ten-assignment.web.app/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# About My Project .
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- It is A Automotive Brand Shop
+- You Can Buy Cars,Trucks,Vans etc By Clicking A Brand Name
+- You Can Add Product
+- You Can Login For Get Access Aditional Settings
+- You Can Toggle Login To Register
+- You Can Toggle Dark Theme And Light Theme
+- You Can Sing In With Social Accounts
+- You Can See Add To Cart Items
+- You Can Delete Add To Carts Items
+- You Can Slide Show Images Use Keyboard And Mouse
