@@ -45,7 +45,7 @@ const MyCart = () => {
     {/* head */}
     <thead>
       <tr>
-        <th>Photo</th>
+        <th className="hidden md:block">Photo</th>
         <th>Brand</th>
         <th>Name</th>
         <th>Price</th>
@@ -57,10 +57,10 @@ const MyCart = () => {
       
       {
         cartItem.map(data=><tr key={data._id}>
-            <td><div className="w-32"><img src={data.photo} alt="" /></div></td>
-            <td className="font-bold">{data.brand}</td>
-            <td className="font-bold">{data.name}</td>
-            <td className="font-bold">{data.price}</td>
+            <td className="hidden md:block"><div className="w-32"><img src={data.photo} alt="" /></div></td>
+            <td className="font-normal md:font-bold">{data.brand}</td>
+            <td className="font-normal md:font-bold">{data.name}</td>
+            <td className="font-normal md:font-bold">{data.price}</td>
             <td><button onClick={()=>deleteItem(data._id)} className="btn btn-accent">X</button></td>
           </tr>)
       }

@@ -78,10 +78,10 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className=" bg-slate-100 shadow-lg flex flex-col md:flex-row gap-3 justify-between p-2 items-center">
+    <div className=" bg-slate-100 shadow-lg flex flex-col lg:flex-row gap-3 justify-between p-2 items-center">
       <div>
         <Link to="/">
-          <p className=" uppercase text-3xl text-blue-500 font-bold">
+          <p className=" uppercase text-3xl text-blue-500 font-bold md:mb-2 lg:mb-0">
           Automotive SHOP
           </p>
         </Link>
@@ -89,7 +89,7 @@ const Navbar = () => {
       <div className="">
         <ul className="flex justify-between items-center gap-3">{navBar}</ul>
       </div>
-      <div className="flex justify-center items-center gap-4">
+      <div className="flex justify-center items-center gap-4 mt-3 lg:mt-0">
        <div>
        {user ? (
           <div className="dropdown dropdown-end">
@@ -135,7 +135,7 @@ const Navbar = () => {
 
         <div>
           {
-            light?<p className=" cursor-pointer font-bold" onClick={handelDark}>Dark</p>:<p className=" cursor-pointer font-bold" onClick={handelLight}>Light</p>
+            light?<p className=" cursor-pointer font-bold" onClick={handelDark}>Dark</p>:<p className=" cursor-pointer font-bold text-black" onClick={handelLight}>Light</p>
           }
           
           

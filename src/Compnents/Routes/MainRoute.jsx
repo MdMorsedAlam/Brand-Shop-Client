@@ -12,6 +12,7 @@ import BrandProduct from "../Pages/BrandProduct";
 import UpdateProduct from "../Pages/AddProduct/UpdateProduct";
 import DetailsProduct from "../Pages/AddProduct/DetailsProduct";
 import ErrorProduct from "../Pages/AddProduct/ErrorProduct";
+import ErrorCart from "../Pages/MyCart/ErrorCart";
 const MainRoute = ({ children }) => {
   const router = createBrowserRouter([
     {
@@ -39,6 +40,7 @@ const MainRoute = ({ children }) => {
               <MyCart />
             </PrivateRoute>
           ),
+          errorElement:<ErrorCart></ErrorCart>,
           loader:()=>fetch("https://server-brand-shop.vercel.app/mycart")
         },
         {

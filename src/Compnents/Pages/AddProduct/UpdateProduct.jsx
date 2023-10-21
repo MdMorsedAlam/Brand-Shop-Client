@@ -55,13 +55,13 @@ const UpdateProduct = () => {
     }
   };
   return (
-    <div className="w-2/3 mx-auto bg-[#d4bf87] p-10">
+    <div className="lg:w-2/3 mx-auto bg-[#d4bf87] p-10 my-10">
       <h1 className=" text-green-500 text-center text-4xl font-bold">
         Update This Product
       </h1>
       <form className="mt-12" onSubmit={handelUpdate}>
-        <div className="flex justify-between gap-5">
-          <div className="form-control w-1/2">
+        <div className="flex flex-col md:flex-row justify-between gap-5">
+          <div className="form-control w-full md:w-1/2">
             <label className="label">
               <span className="label-text font-bold text-lg">Brand Name</span>
             </label>
@@ -71,7 +71,7 @@ const UpdateProduct = () => {
               </select>
             </label>
           </div>
-          <div className="form-control w-1/2">
+          <div className="form-control w-full md:w-1/2">
             <label className="label">
               <span className="label-text font-bold text-lg">Product Type</span>
             </label>
@@ -88,8 +88,8 @@ const UpdateProduct = () => {
           </div>
          
         </div>
-        <div className="flex justify-between gap-5 mt-5">
-        <div className="form-control w-1/2">
+        <div className="flex flex-col md:flex-row justify-between gap-5">
+        <div className="form-control w-full md:w-1/2">
             <label className="label">
               <span className="label-text font-bold text-lg">Name</span>
             </label>
@@ -104,7 +104,7 @@ const UpdateProduct = () => {
               />
             </label>
           </div>
-          <div className="form-control w-1/2">
+          <div className="form-control w-full md:w-1/2">
             <label className="label">
               <span className="label-text font-bold text-lg">Price</span>
             </label>
@@ -121,8 +121,8 @@ const UpdateProduct = () => {
           </div>
           
         </div>
-        <div className="flex justify-between gap-5 mt-5">
-        <div className="form-control w-1/2">
+        <div className="flex flex-col md:flex-row justify-between gap-5">
+        <div className="form-control w-full md:w-1/2">
             <label className="label">
               <span className="label-text font-bold text-lg">Rating</span>
             </label>
@@ -138,7 +138,7 @@ const UpdateProduct = () => {
             </label>
           </div>
           
-          <div className="form-control w-1/2">
+          <div className="form-control w-full md:w-1/2">
             <label className="label">
               <span className="label-text font-bold text-lg">Photo URL</span>
             </label>

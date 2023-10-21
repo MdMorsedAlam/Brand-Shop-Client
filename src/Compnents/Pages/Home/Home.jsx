@@ -12,7 +12,7 @@ const Home = () => {
         <h1 className="text-4xl text-center font-bold mb-10">
           About Our Organization
         </h1>
-        <div className="flex items-center gap-10">
+        <div className="flex flex-col lg:flex-row items-center gap-10">
           <div className="flex-1">
             <img
               className="w-full h-full"
@@ -52,7 +52,7 @@ const Home = () => {
         </div>
       </div>
       {/* Contact Section */}
-      <div className="">
+      <div className="mt-10">
         <div className="hero min-h-screen bg-base-200">
           <div className="hero-content flex-col lg:flex-row-reverse">
             <div className="text-center lg:text-left">

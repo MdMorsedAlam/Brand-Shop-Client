@@ -5,7 +5,7 @@ const Brands = ({ brands }) => {
   return (
     <div>
       <div
-        className="hero h-[70vh]"
+        className="hero h-[550px]"
         style={{
           backgroundImage: "url(https://i.ibb.co/VS88hZR/S-Class-S-450.jpg)",
         }}
@@ -25,7 +25,7 @@ const Brands = ({ brands }) => {
         <h1 className="text-4xl text-center font-bold mb-10">
           Features Brands
         </h1>
-        <div className="grid grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {brands.map((brand) => (
             <Link key={brand.id} to={`/showbranditem/${brand.url}`}>
               <div className="card bg-slate-100 shadow-xl">

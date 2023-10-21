@@ -59,7 +59,7 @@ const Register = () => {
     form.reset();
   };
   return (
-    <div className="hero min-h-screen bg-base-200 w-2/3 mx-auto">
+    <div className="hero my-10 min-h-screen bg-base-200 md:w-2/3 mx-auto">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold">Register now!</h1>

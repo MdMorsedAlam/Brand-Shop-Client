@@ -38,7 +38,7 @@ const BrandProduct = () => {
           >
             {loaderData.slice(0, 4).map((data) => (
               <SwiperSlide key={data._id}>
-                <div className="h-[450px]">
+                <div className="h-[350px] md:h-[450px]">
                   <img className="h-full w-full" src={data.photo} alt="" />
                 </div>
               </SwiperSlide>
@@ -47,7 +47,7 @@ const BrandProduct = () => {
         </div>
         {/* Slider */}
         {/* Products */}
-        <div className="grid grid-cols-2 gap-10 my-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 my-10">
           {loaderData?.map((item) => (
             <div key={item._id} className="card bg-base-100 shadow-xl">
               <figure>
